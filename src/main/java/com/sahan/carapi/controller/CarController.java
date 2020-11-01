@@ -16,11 +16,20 @@ public class CarController {
     @Autowired
     private CarService carService;
 
+    /**
+     * Get list of cars
+     * @return List of cars
+     */
     @GetMapping
-    public Iterable<Car> getAllCars(){
+    public List<Car> getAllCars(){
         return carService.getAll();
     }
 
+    /***
+     *
+     * @param <int> the type of elements in this list
+     * @return Car object
+     */
     @GetMapping("/{id}")
     public Car getCarById(@PathVariable("id") int id){
         return carService.getCarById(id);
